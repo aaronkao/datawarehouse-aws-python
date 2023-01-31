@@ -1,0 +1,27 @@
+name: ${PROJECT}
+description: ${DESCRIPTION}
+
+runtime:
+  name: python
+
+template:
+  description: A Python program to deploy a Redshift data warehouse on AWS
+  config:
+    aws:region:
+      description: The AWS region to deploy into
+      default: us-west-2
+    clusterIdentifier:
+      description: Name of Redshift cluster
+      default: my-redshift-cluster
+    clusterNodeType:
+      description: Instance type to use for cluster nodes
+      default: ra3.xlplus
+    clusterDBName:
+      description: Name of database in Redshift cluster
+      default: dev
+    clusterDBUsername:
+      description: User name of database
+      default: admin
+    clusterDBPassword:
+      description: Password for database
+      secret: true
